@@ -17,10 +17,10 @@ function performAction(){
   const zipCode =  document.getElementById('zip').value;
   const userFeelings = document.getElementById('feelings').value;
   weatherMap(baseURL,zipCode, apiKey)
-  .then(function (apiData) { // Chain Promise for POST request
+  .then(function (apiData) { // Promise chain for POST request
     console.log(apiData);
     postData('/add', {date:d, temp:apiData.main.temp, content:userFeelings})
-    .then(function () { // Another Chain Promise for UI
+    .then(function () { // Another Promise chain for UI
       retrieveData();  // Update UI dynamically
     })
   })
