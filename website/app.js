@@ -20,7 +20,7 @@ function performAction(){
   .then(function (apiData) { // Chain Promise for POST request
     console.log(apiData);
     postData('/add', {date:d, temp:apiData.main.temp, content:userFeelings})
-    .then(function () { // Chain another Promise for UI
+    .then(function () { // Another Chain Promise for UI
       retrieveData();  // Update UI dynamically
     })
   })
